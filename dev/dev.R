@@ -1,8 +1,10 @@
 library(devtools)
+library(pkgdown)
 
 document()
 check()
 build()
+build_site(examples=FALSE)
 
 # initial setup ----
 # use_data_table()
@@ -29,6 +31,7 @@ build()
 # use_r('get_index')
 # use_r('compare_index')
 # use_r('plot_restrat')
+use_vignette("example")
 
 # example run ----
 library(goaRestrat)

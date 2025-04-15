@@ -1,0 +1,48 @@
+---
+title: "example"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{example}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, eval=FALSE}
+library(goaRestrat)
+
+# example run ----
+# tier 3 species codes
+species_t3 = c(10110, 10130, 10180, 20510, 21720, 21740, 30060, 30420, 30050, 30051, 30052, 30150, 30152, 10261, 10262, 10200)
+
+data <- query_data(species=species_t3)
+
+# reclassify haul station locations ----
+new_haul <- restrat(data, run_terra=TRUE)
+
+# compute abundance indices (biom & numbers) ----
+index <- get_index(data=data, new_haul=new_haul)
+
+## check that computed indices matches with gap produced indices (within 0.1% on average) ---
+compare_index(data, index)
+
+# plot comparison between res-tratified and og indices ----
+
+# example for pacific cod
+species = 21720
+stock_name = "Pcod"
+
+plot_restrat(index, species, stock_name)
+
+# example for complex (rebs)
+species = c(30050, 30051, 30052)
+stock_name = "REBS"
+
+plot_restrat(index, species, stock_name)
+```
