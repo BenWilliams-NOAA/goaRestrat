@@ -26,3 +26,7 @@ Imports:
 Remotes:
     afsc-assessments/afscdata
     BenWilliams-NOAA/afscassess
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
