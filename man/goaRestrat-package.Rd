@@ -6,10 +6,10 @@
 \alias{goaRestrat-package}
 \title{goaRestrat: What the Package Does (One Line, Title Case)}
 \description{
-What the package does (one paragraph).
+Re-stratify GOA survey data.
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com}
+\strong{Maintainer}: Pete Hulson \email{pete.hulson@noaa.gov}
 
 }
 \keyword{internal}
