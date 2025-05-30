@@ -107,7 +107,7 @@ plot_restrat <- function(index, species, stock_name) {
     ggplot2::geom_bar(stat = "identity", show.legend=FALSE) +
     ggplot2::geom_text(ggplot2::aes(label = perc_diff, vjust = pjust), size=3) +
     ggplot2::facet_wrap(~region, ncol = 1, scales = 'free_y') +
-    ggplot2::ylim(floor(1.2 * min(plot_dat$diff_biom)), ceiling(1.2 * max(plot_dat$diff_biom))) +
+    ggplot2::coord_cartesian(ylim = c(floor(1.2 * min(plot_dat$diff_biom)), ceiling(1.2 * max(plot_dat$diff_biom)))) +
     ggplot2::geom_hline(yintercept = 0) +
     scico::scale_fill_scico_d(palette = 'roma') +
     afscassess::theme_report() +
