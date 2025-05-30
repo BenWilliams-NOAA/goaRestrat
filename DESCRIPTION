@@ -24,7 +24,7 @@ Imports:
     tidytable,
     vroom
 Remotes:
-    afsc-assessments/afscdata
+    afsc-assessments/afscdata,
     BenWilliams-NOAA/afscassess
 Suggests: 
     knitr,
